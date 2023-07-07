@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/navigation"
+    app:startDestination="@id/logInScreen">
+
+    <fragment
+        android:id="@+id/logInScreen"
+        android:name="com.abufoda.authmoblieapp.ui.LogInScreen"
+        android:label="LogInScreen" >
+        <action
+            android:id="@+id/action_logInScreen_to_registerScreen"
+            app:destination="@id/registerScreen" />
+        <action
+            android:id="@+id/action_logInScreen_to_profileScreen"
+            app:destination="@id/profileScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/registerScreen"
+        android:name="com.abufoda.authmoblieapp.ui.RegisterScreen"
+        android:label="RegisterScreen" >
+        <action
+            android:id="@+id/action_registerScreen_to_logInScreen"
+            app:destination="@id/logInScreen" />
+        <action
+            android:id="@+id/action_registerScreen_to_profileScreen"
+            app:destination="@id/profileScreen" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileScreen"
+        android:name="com.abufoda.authmoblieapp.ui.ProfileScreen"
+        android:label="ProfileScreen" >
+        <action
+            android:id="@+id/action_profileScreen_to_logInScreen"
+            app:destination="@id/logInScreen" />
+        <argument
+            android:name="id"
+            app:argType="string" />
+    </fragment>
+</navigation>
